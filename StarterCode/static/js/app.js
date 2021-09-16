@@ -19,7 +19,7 @@ function buildCharts(selected_id) {
         let samples = subjectData.samples;
 
         // Demographic Info
-        meta_init(metadata)
+        meta_init(metadata);
     
         // Horizontal Bar Chart
         bar_init(samples);
@@ -27,15 +27,15 @@ function buildCharts(selected_id) {
     })
 }
 
-function optionChange(id) {
+function optionChanged(id) {
     console.log(id);
     buildCharts(id)
 
 }
 
 function selectData(id, data) {
-    let metadata = data.metadata.filter(subject => subject.id == selected_id)[0];
-    let samples = data.samples.filter(subject => subject.id == selected_id)[0];
+    let metadata = data.metadata.filter(subject => subject.id == id)[0];
+    let samples = data.samples.filter(subject => subject.id == id)[0];
     return {
         metadata: metadata, 
         samples: samples
